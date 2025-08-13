@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { kanto151 } from "./pokemon";
 import CardWrapper from "./CardWrapper";
+import ScoreDisplay from "./ScoreDisplay";
 
 function App() {
         const [pokemon, setPokemon] = useState([]);
-        // const [currentScore, setCurrentScore] = useState(0);
-        // const [bestScore, setBestScore] = useState(0);
+        const [currentScore, setCurrentScore] = useState(0);
+        const [bestScore, setBestScore] = useState(0);
 
         useEffect(() => {
             const fetchPokemonData = async () => {
@@ -35,10 +36,17 @@ function App() {
             }
         }, []);
 
+        function handleCardSelection () {
+
+        }
+
 
   return (
     <>
-      <CardWrapper pokemon={pokemon}/>
+        <h1>Pokémon Memory Game</h1>
+        <p>Click on a Pokémon to gain points. But don't click on the same one twice!</p>
+        <ScoreDisplay  currentScore={currentScore} bestScore={bestScore}/>
+        <CardWrapper pokemon={pokemon}/>
     </>
   )
 }
