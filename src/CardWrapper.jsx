@@ -1,6 +1,6 @@
 import Card from "./Card"
 
-export default function CardWrapper({ pokemon }) {
+export default function CardWrapper({ pokemon, handleCardSelect}) {
 
     //Fisher Yates Shuffle
     function shuffle(array) {
@@ -14,7 +14,7 @@ export default function CardWrapper({ pokemon }) {
 
     function getRandomPokeEntries(n) {
         //Render at least 1 pokemon that is unchosen by user
-        const unchosen = pokemon.filter(entry => !entry.chosen);
+        const unchosen = pokemon.filter(entry => entry.timesClicked < 1);
         if (unchosen.length === 0) return []; //Perfect score
 
         const firstPick = unchosen[Math.floor(Math.random() * unchosen.length)];
@@ -26,21 +26,20 @@ export default function CardWrapper({ pokemon }) {
         return finalShuffle;
     }
 
-
-
     // Guard for empty array
     if (pokemon.length === 0) {
         return <div>Loading cards...</div>;
     }
 
-    const selected = getRandomPokeEntries(20);
+    const selected = getRandomPokeEntries(6);
     //if selected is empty user has perfect score
+    if (selected.length === 0) return <>Perfect</>
 
     return (
         <div className="card-wrapper">
             <ul>
-                {selected.map((entry, idx) => (
-                    <Card key={idx} entry={entry} />
+                {selected.map((entry) => (
+                    <Card key={entry.number} entry={entry} handleCardSelect={handleCardSelect} />
                 ))}
             </ul>
         </div>
