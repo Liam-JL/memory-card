@@ -1,0 +1,98 @@
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #000;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Remove animations/transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+:root {
+  /* Base colors */
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-primary: #4dabf7; /* calm blue */
+  --color-primary-dark: #1c7ed6;
+  --color-accent : #ffd43b; /* Pikachu yellow */
+  --color-text: #212529;
+  --color-text-muted: #868e96;
+
+  /* Status colors */
+  --color-success: #38d9a9;
+  --color-error: #fa5252;
+
+  /* Card shadow */
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.08),
+                 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-family: "Chewy", system-ui;
+}

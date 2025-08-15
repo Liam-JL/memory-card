@@ -1,0 +1,65 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.header{
+    display: grid;
+    grid-template-areas: 
+        "heading heading score"
+        "description description buttons"
+    ;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-primary-dark);
+}
+
+.header-icon {
+    width: 100px;
+    height: auto;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+
+.heading {
+    grid-area: heading;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-accent);
+}
+
+.description {
+    grid-area: description
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    grid-area: buttons;
+    justify-self: end;
+}
+
+.btn {
+    padding: 0.2rem;
+    width: 150px;
+    background-color: var(--color-primary);
+    border: 3px solid var(--color-accent);
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--color-accent);
+}
+
+.score-display {
+    grid-area: score;
+    justify-self: end;
+    display: flex;
+    gap: 1rem;
+    font-size: x-large;
+}
