@@ -6,7 +6,7 @@ Get them all without repeats for a perfect score.
 
 ![Screenshot](./app-ss.png)
 
-[▶ Live Demo](https://your-demo-link.com)
+[▶ Live Demo](https://ljp-pokemon-memory-game.netlify.app/)
 
 ---
 
