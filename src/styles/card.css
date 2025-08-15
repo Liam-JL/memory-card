@@ -3,8 +3,6 @@
   border: 3px solid var(--color-primary-dark);
   border-radius: 8px;
   box-shadow: var(--shadow-card);
-  padding: 1rem;
-  max-width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +16,8 @@
 }
 
 .card__img-wrapper {
-  width: 180px;       /* fixed width for all cards */
-  height: 180px;      /* fixed height for all cards */
+  width: clamp(150px, 25vw, 250px);
+  height: clamp(150px, 25vh, 250px);     
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,12 +41,17 @@
   text-align: center;
   background-color: var(--color-primary);
   width: 100%;
-  border-radius: 4px;
+  border-radius: 0px, 4px;
+}
+
+.card-wrapper {
+  padding: 1rem;
 }
 
 .card-wrapper__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
+
 
