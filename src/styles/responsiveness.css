@@ -30,3 +30,34 @@
         width: clamp(150px, 100%, 350px);
     }
 }
+
+@media only screen and (min-width: 1500px) {
+    .app {
+        font-size: xx-large;
+    }
+
+    .header-icon {
+        width: 200px;
+        margin-top: -3rem;
+        margin-bottom: -3rem;
+    }
+
+    .btn {
+        width: 300px;
+    }
+
+    .score-display {
+        font-size: xx-large;
+    }
+
+
+    .card__img-wrapper {
+        width: clamp(350px, 30vw, 500px);
+        height: clamp(350px, 30vh, 500px);   
+    }
+
+    .card__img {
+        padding: 1rem;
+    }
+
+}
