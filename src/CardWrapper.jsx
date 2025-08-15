@@ -31,7 +31,7 @@ export default function CardWrapper({ pokemon, handleCardSelect}) {
         return <div>Loading cards...</div>;
     }
 
-    const selected = getRandomPokeEntries(8);
+    const selected = getRandomPokeEntries(6);
     //if selected is empty user has perfect score
     if (selected.length === 0) return <>Perfect</>
 

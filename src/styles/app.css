@@ -1,8 +1,9 @@
 .app {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+    justify-items: center;
     align-items: center;
-    gap: 2.5rem;
 }
 
 .header{
