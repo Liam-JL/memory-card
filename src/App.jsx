@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { kanto151 } from "./pokemon";
 import CardWrapper from "./CardWrapper";
 import ScoreDisplay from "./ScoreDisplay";
+import { SiPokemon } from "react-icons/si";
 
 function App() {
         const [pokemon, setPokemon] = useState([]);
@@ -84,14 +85,21 @@ function App() {
 
 
   return (
-    <>
-        <h1>Pokémon Memory Game</h1>
-        <p>Click on a Pokémon to gain points. But don't click on the same one twice!</p>
-        <ScoreDisplay  currentScore={currentScore} bestScore={bestScore}/>
-        <button className="btn btn--reset" onClick={reset}>Reset Round</button>
-        <button className="btn btn--restart" onClick={restart}>Restart</button>
+    <div className="app">
+        <header className="header">
+            <span className="heading">
+                <SiPokemon className="header-icon" />
+                <h1>Memory Game</h1>
+            </span>
+            <p className="description">Click on a Pokémon to gain points. But don't click on the same one twice!</p>
+            <ScoreDisplay  currentScore={currentScore} bestScore={bestScore}/>
+            <span className="buttons">
+                <button className="btn btn--reset" onClick={reset} aria-label="reset-round">Reset Round</button>
+                <button className="btn btn--restart" onClick={restart}>Restart</button>
+            </span>
+        </header>
         <CardWrapper pokemon={pokemon} handleCardSelect={handleCardSelect} />
-    </>
+    </div>
   )
 }
 
